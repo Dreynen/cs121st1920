@@ -7,6 +7,7 @@ class hello {
         for (int i = 0; i < N; i++) {
             sum += scanner.nextInt();
         }
+
         System.out.println(sum);
     }
 }

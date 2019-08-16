@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class lab3a {
+public class lab1c {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
 
@@ -16,8 +16,7 @@ public class lab3a {
                     numCarry++;
                     carry = sum / 10;
                 }
-                else
-                {
+                else {
                     carry = 0;
                 }
 

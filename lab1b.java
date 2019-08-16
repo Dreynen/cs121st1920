@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class lab2a {
-    static final int MaxRow = 8, MaxCol = 8;
+public class lab1b {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
