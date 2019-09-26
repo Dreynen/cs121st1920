@@ -10,9 +10,9 @@ class ArraySum {
 }
 
 class Tribonacci {
-    private static ArrayList<Integer> memo;
-    public static int trib(int n, int[] memo) {
-        if (n == 0 || n == 1 || n == 2) { memo[i] = n; }
+    public static int trib(int n) {
+        if (n == 0) { return 0; }
+        if (n == 1 || n == 2) { return 1; }
 
         return trib(n-1) + trib(n-2) + trib(n-3);
     }
