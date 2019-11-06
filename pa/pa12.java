@@ -84,7 +84,9 @@ public class pa12 {
     }
 
     private static boolean isHamiltonian(UndirectedGraph graph) {
-        if (Hamiltonian(graph, "", graph.getVertices().get(0))) { return true; }
+        if (graph.getVertexCount() == 1 || Hamiltonian(graph, "", graph.getVertices().get(0))) {
+            return true;
+        }
         return false;
     }
 
