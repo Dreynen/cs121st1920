@@ -1,26 +1,21 @@
 import java.util.*;
 
 public class lab8a {
-	private static void printAll(char[] str, int i) {
-		if (str.length == i) {
-		    System.out.println(str);
-		    return;
+	private static void printAll(String S, String output, int i) {
+		if (S.length() == i) {
+			System.out.println(output);
+			return;
 		}
 
-		char [] a = str.clone();
-
-		if (a[i] == '!') {
-			for (char c = 'a'; c != 'h' + 1; c++) {
-				a[i] = c;
-				printAll(a, i + 1);
+		if (S.charAt(i) == '!') {
+			for (char c = 'a'; c <= 'h'; c++) {
+				printAll(S, output + c, i + 1);
 			}
-		} else if (a[i] == '@') {
-			for (char c = '0'; c != '9' + 1; c++) {
-				a[i] = c;
-				printAll(a, i + 1);
+		}
+		if (S.charAt(i) == '@') {
+			for (char c = '0'; c <= '9'; c++) {
+				printAll(S, output + c, i + 1);
 			}
-		} else {
-		    printAll(a, i + 1);
 		}
 	}
 
@@ -29,8 +24,8 @@ public class lab8a {
 		int T = sc.nextInt();
 		sc.nextLine();
 		while (T-->0) {
-			char[] str = sc.next().toCharArray();
-			printAll(str, 0);
+			String str = sc.nextLine();
+			printAll(str, "", 0);
 		}
 	}
 }

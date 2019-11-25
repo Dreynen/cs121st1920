@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class lab9a {
-    private static long[][] memof = new long[66][66];
-    private static long[][] memog = new long[66][66];
+    private static long[][] memof = new long[67][67];
+    private static long[][] memog = new long[67][67];
 
     private static long f(int n, int s) {
         if (s < 0 || n <= 0) { return 0; }
@@ -19,7 +19,6 @@ public class lab9a {
         }
 
         memof[n][s] = v;
-
         return v;
     }
 
@@ -30,9 +29,9 @@ public class lab9a {
 
         long v;
         if (s > n || (n == 1 && s == 0)) {
-            return 0;
+            v = 0;
         } else if (n == 1 && s == 1) {
-            return 1;
+            v = 1;
         } else {
             v = f(n - 1, s - 1) + g(n - 1, s - 1);
         }
@@ -42,10 +41,11 @@ public class lab9a {
         return v;
     }
 
-    private static void init(long[][] arr) {
-        for (int i = 0; i < 65; i++) {
-            for (int j = 0; j < 65; j++) {
-                arr[i][j] = -1;
+    private static void init() {
+        for (int i = 0; i < 67; i++) {
+            for (int j = 0; j < 67; j++) {
+                memof[i][j] = -1;
+                memog[i][j] = -1;
             }
         }
     }
@@ -57,8 +57,7 @@ public class lab9a {
         while(T-->0) {
             N = sc.nextInt();
             S = sc.nextInt();
-            init(memof);
-            init(memog);
+            init();
             System.out.println(f(N, S) + g(N, S));
         }
     }
