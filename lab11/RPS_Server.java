@@ -82,6 +82,8 @@ public class RPS_Server {
 			in2.close();
 			out2.close();
 			player2.close();
+
+			serverSocket.close();
 		}
 		catch (IOException i) {
 			System.out.println(i);
