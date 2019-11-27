@@ -57,11 +57,8 @@ public class RPS_Server {
 				if (win(move2, move1)) {
 					score2++;
 				}
-				out1.println(score1);
-				out1.println(score2);
-
-				out2.println(score2);
-				out2.println(score1);
+				out1.println("0" + " " + score1 + " " + score2);
+				out2.println("1" + " " + score1 + " " + score2);
 
 				if (score1 == 10 || score2 == 10) {
 					break;

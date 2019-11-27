@@ -22,7 +22,8 @@ public class RPS_Client {
 			System.out.println(i);
 		}
 
-		String move;
+        String move;
+        String info[];
 		int myScore;
 		int opScore;
 
@@ -31,8 +32,9 @@ public class RPS_Client {
 				move = clientIn.readLine();
 				socketOut.println(move);
 
-				myScore = Integer.parseInt(socketIn.readLine());
-				opScore = Integer.parseInt(socketIn.readLine());
+                info = socketIn.readLine().split(" ");
+				myScore = Integer.parseInt(info[0].equals("0") ? info[1] : info[2]);
+				opScore = Integer.parseInt(info[0].equals("0") ? info[2] : info[1]);
 
 				System.out.println("You: " + myScore + " pts");
 				System.out.println("Opponent: " + opScore + " pts");
